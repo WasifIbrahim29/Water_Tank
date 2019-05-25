@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "721336638717",
+    "firebase_url": "https://aquatracker-1b6c5.firebaseio.com",
+    "project_id": "aquatracker-1b6c5",
+    "storage_bucket": "aquatracker-1b6c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721336638717:android:b976b993411c0ca1",
+        "android_client_info": {
+          "package_name": "com.example.aquatracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721336638717-vrd6kroavfghkbfvm20vu8476e9t40ml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aquatracker",
+            "certificate_hash": "0a7cfa901d85797da7ad47c2f42f176b24e1a985"
+          }
+        },
+        {
+          "client_id": "721336638717-pk8br1mprdlbdvo9hk0ktldt0ldn02e4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXh3-ci1kDzozZB7eGojDMxsbQuaRvZj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721336638717-pk8br1mprdlbdvo9hk0ktldt0ldn02e4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
