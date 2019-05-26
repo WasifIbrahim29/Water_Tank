@@ -107,6 +107,12 @@ public class FirebaseMethods extends Activity {
                 .child(userID)
                 .child("overheadLevel")
                 .setValue(overheadLevel);
+
+
+        myRef.child("users")
+                .child(userID)
+                .child("mainLevel")
+                .setValue(overheadLevel);
     }
 
     public void setUndergroundLevel(String undergroundLevel,String userID){
@@ -117,12 +123,6 @@ public class FirebaseMethods extends Activity {
         myRef.child("users")
                 .child(userID)
                 .child("undergroundLevel")
-                .setValue(undergroundLevel);
-
-
-        myRef.child("users")
-                .child(userID)
-                .child("mainLevel")
                 .setValue(undergroundLevel);
 
     }
