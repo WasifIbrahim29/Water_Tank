@@ -9,32 +9,41 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.aquatracker.Utils.FirebaseMethods;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SetLevelOverhead extends AppCompatActivity {
 
-    private static Button UnderG_btn;
+    private static Button setLevel;
     private static ImageButton back_btn;
 
 
     SeekBar seekBar;
     TextView waterLevel;
+    String tankLevel;
+
+    private FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_level_overhead);
+        mAuth=FirebaseAuth.getInstance();
 
         getSupportActionBar().setTitle("Overhead Tank");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        UnderG_btn=(Button)findViewById(R.id.UG_btn);
+        setLevel=(Button)findViewById(R.id.setLevel);
 
 
-        UnderG_btn.setOnClickListener(new View.OnClickListener() {
+        setLevel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent51=new Intent(getBaseContext(),SetLevelUnderground.class);
-                startActivity(intent51);
+                FirebaseMethods firebaseMethods= new FirebaseMethods(getApplicationContext());
+                firebaseMethods.setOverheadLevel(tankLevel,mAuth.getCurrentUser().getUid());
+                finish();
+
             }
         });
 
@@ -52,6 +61,7 @@ public class SetLevelOverhead extends AppCompatActivity {
 
                 ((DrawingTheBall) myView).setProgress(progress);
                 waterLevel.setText("Water Level: "+ progress + " %");
+                tankLevel=progress+"";
                 myView.invalidate();
             }
 

@@ -39,10 +39,10 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:id="@+id/UG_btn"
+        android:id="@+id/setLevel"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:layout_gravity="right"
-        android:text="Set Underground Tank Level"/>
+        android:text="Set Tank Level"/>
 
 </LinearLayout>

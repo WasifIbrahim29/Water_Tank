@@ -48,9 +48,9 @@ public class loginactivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v)
                     {
-                        //signin();
-                        Intent i1=new Intent(getBaseContext(),MainActivity.class);
-                        startActivity(i1);
+                        signin();
+                        //Intent i1=new Intent(getBaseContext(),MainActivity.class);
+                        //startActivity(i1);
 
                     }
                 }
@@ -97,7 +97,7 @@ public class loginactivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
-                    finish();
+                    //finish();
                     Intent intent11 = new Intent(loginactivity.this, MainActivity.class);
                     intent11.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent11);

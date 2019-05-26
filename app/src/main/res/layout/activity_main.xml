@@ -1,106 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/Statistics_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:text="Statistics"
-        app:layout_constraintBottom_toTopOf="@+id/SetLevel_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Log Out"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
-
-    <Button
-        android:id="@+id/SetLevel_button"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="120dp"
-        android:text="Set Level"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/FlowRate_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Flow Rate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
-
-    <TextView
-        android:id="@+id/Temperature_Textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Temperature"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FlowRate_text"
-        app:layout_constraintVertical_bias="0.005" />
+    android:layout_weight="100"
+    tools:context="com.example.aquatracker.SetLevelUnderground">
 
     <LinearLayout
-        android:id="@+id/tank"
-        android:layout_width="241dp"
-        android:layout_height="333dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:clickable="true"
-        android:fadingEdge="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/lin1"
+        android:layout_weight="90"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="40dp"
         android:orientation="vertical"
-        android:scrollY="?attr/listPreferredItemPaddingLeft"
-        android:splitMotionEvents="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"></LinearLayout>
+        android:weightSum="100">
 
-</android.support.constraint.ConstraintLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:id="@+id/logout_button"
+            android:layout_gravity="right"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:layout_weight="5"
+            android:id="@+id/waterLevel"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textColor="#000"
+            android:text="Water Level: 0 %"
+            android:textSize="15sp"/>
+
+        <com.example.aquatracker.DrawingTheBall
+            android:id="@+id/id1"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="90"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:weightSum="100"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="10"
+        android:id="@+id/lin2"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/UG_btn"
+            android:gravity="left"
+            android:layout_marginRight="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:layout_gravity="right"
+            android:text="Set Underground Tank Level"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/OH_btn"
+            android:gravity="right"
+            android:textSize="12sp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_gravity="left"
+            android:text="Set Overheard Tank Level"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
