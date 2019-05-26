@@ -22,6 +22,7 @@ public class DrawingTheBall extends View {
     Integer progress=0;
 
     Rect rect= new Rect();
+    Paint paint= new Paint();
 
 
     public DrawingTheBall(Context context,int pro) {
@@ -50,13 +51,12 @@ public class DrawingTheBall extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         int temp=progress;
 
         progress=((getHeight()*progress)/100);
         progress=getHeight()-progress;
 
-        rect.set(getHeight(),getHeight(),10,progress);
+        rect.set(getWidth()-6,getHeight()-6,15,progress);
 
 
         //rect.set(getWidth(),progress,10,10);
@@ -67,7 +67,21 @@ public class DrawingTheBall extends View {
 
         Paint black = new Paint();
         black.setColor(Color.rgb(0,0,0));
-        black.setStyle(Paint.Style.FILL);
+        black.setStyle(Paint.Style.FILL_AND_STROKE);
+        black.setStrokeWidth(6f);
+
+
+        Paint black1 = new Paint();
+        black1.setColor(Color.rgb(0,0,0));
+        black1.setStyle(Paint.Style.FILL_AND_STROKE);
+        black1.setStrokeWidth(6f);
+
+
+        canvas.drawLine(10,10,10,getHeight(),black);
+        black.setStrokeWidth(6f);
+        canvas.drawLine(10,getHeight(),getWidth(),getHeight(),black1);
+        black.setStrokeWidth(6f);
+        canvas.drawLine(getWidth(),10,getWidth(),getHeight(),black);
 
         canvas.drawRect(rect,blue);
 
